@@ -1,0 +1,44 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Cross Platform Test Suite" parallel="tests" thread-count="3">
+    <test name="Chrome Test">
+        <parameter name="platform" value="desktop" />
+        <parameter name="browser" value="chrome" />
+        <parameter name="url" value="http://indiaserver.sypramtechnology.com:5070/" />
+        <classes>
+            <class name="Automation.Framework.pages.EZORDERPro.tests.LoginTest" />
+
+        </classes>
+    </test>
+    <!--<test name="Firefox Test">
+        <parameter name="platform" value="desktop" />
+        <parameter name="browser" value="firefox" />
+        <parameter name="url" value="http://indiaserver.sypramtechnology.com:5070/" />
+        <classes>
+            <class name="Automation.Framework.pages.EZORDERPro.tests.LoginTest" />
+        </classes>
+    </test>-->
+     <test name="Edge Test">
+        <parameter name="platform" value="desktop" />
+        <parameter name="browser" value="edge" />
+        <parameter name="url" value="http://indiaserver.sypramtechnology.com:5070/" />
+        <classes>
+            <class name="Automation.Framework.pages.EZORDERPro.tests.LoginTest" />
+        </classes>
+    </test>
+    <!--<test name="Android Test">
+        <parameter name="platform" value="android" />
+        <parameter name="deviceName" value="yourAndroidDevice" />
+        <parameter name="url" value="http://indiaserver.sypramtechnology.com:5070/" />
+        <classes>
+            <class name="Automation.Framework.pages.EZORDERPro.tests.LoginTest" />
+        </classes>
+    </test>
+    <test name="iOS Test">
+        <parameter name="platform" value="ios" />
+        <parameter name="deviceName" value="yourIOSDevice" />
+        <parameter name="url" value="http://indiaserver.sypramtechnology.com:5070/" />
+        <classes>
+            <class name="Automation.Framework.pages.EZORDERPro.tests.LoginTest" />
+        </classes>
+    </test>-->
+</suite>

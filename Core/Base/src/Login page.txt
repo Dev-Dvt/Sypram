@@ -1,0 +1,53 @@
+package Automation.Framework.pages.EZORDERPro.pages;
+
+import Automation.Framework.pages.BasePage;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class LoginPage extends BasePage {
+    @FindBy(id = "username")
+    private WebElement usernameField;
+
+    @FindBy(id = "password")
+    private WebElement passwordField;
+
+    @FindBy(id = "submit")
+    private WebElement loginButton;
+
+   @FindBy(className = "jconfirm-title") // Example element for a failed message
+    private WebElement failedMessage;
+
+    @FindBy(className = "btn btn-red") // Example element for a failed message OK button
+    private WebElement failedLoginOK;
+
+    @FindBy(className = "dropbtn bx bx-chevron-down bx-sm ps-2") // Example element for a logout button
+    private WebElement logoutButton;
+
+    public LoginPage(WebDriver driver) {
+        super(driver);
+    }
+
+    public void enterUsername(String username) {
+        usernameField.sendKeys(username);
+    }
+
+    public void enterPassword(String password) {
+        passwordField.sendKeys(password);
+    }
+
+    public void clickLogin() {
+        loginButton.click();
+    }
+    public boolean ilogoutButton() {
+        logoutButton.isDisplayed();
+        return false;
+    }
+    public Object ifailedmessage() {
+        failedMessage.isDisplayed();
+        return null;
+    }
+    public void clickfailedLoginOK() {
+        failedLoginOK.click();
+    }
+}

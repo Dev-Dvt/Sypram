@@ -1,0 +1,46 @@
+package Automation.Framework.pages.EZORDERPro.tests;
+
+import Automation.Framework.pages.BaseTest;
+import Automation.Framework.pages.EZORDERPro.pages.LoginPage;
+import Automation.Framework.utilities.ExcelUtils;
+import org.apache.poi.ss.usermodel.CellType;
+import org.testng.annotations.Parameters;
+import org.testng.annotations.Test;
+import org.testng.annotations.DataProvider;
+import org.testng.annotations.Test;
+import org.testng.Assert;
+
+
+import java.io.IOException;
+import java.util.Iterator;
+
+public class LoginTest extends BaseTest {
+    //@Test
+    //@Parameters({"username", "password"})
+
+    @DataProvider(name = "loginData")
+    public Iterator<Object[]> loginData() throws IOException {
+        return ExcelUtils.getTestData("src/test/Resources/Excel files/Logindata.xlsx", "Sheet1").iterator();
+    }
+
+    @Test(dataProvider = "loginData")
+    public void loginTest(String username, String password) {
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.enterUsername(username);
+        loginPage.enterPassword(password);
+        loginPage.clickLogin();
+        /**try {
+            Thread.sleep(5000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }**/
+        // Add assertions to verify successful login
+        // Example assertion to verify successful login by checking the presence of the logout button
+        Assert.assertTrue(loginPage.ilogoutButton(), "Logout button is not displayed; login might have failed.");
+
+        // Example assertion to verify successful login by checking the welcome message
+        String expectedWelcomeMessage = "Login Failed, " + username + "!";
+        Assert.assertEquals(loginPage.ifailedmessage(),expectedWelcomeMessage, "Logged in Successfully");
+    }
+
+}
