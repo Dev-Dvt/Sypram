@@ -5,10 +5,8 @@ import Automation.Framework.pages.EZORDERPro.pages.LoginPage;
 import Automation.Framework.utilities.ExcelUtils;
 
 import org.testng.Assert;
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 import org.testng.annotations.DataProvider;
-
 
 
 import java.io.IOException;

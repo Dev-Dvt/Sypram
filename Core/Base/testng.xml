@@ -1,11 +1,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Cross Platform Test Suite" parallel="tests" thread-count="3">
     <test name="Chrome Test">
-        <parameter name="platform" value="desktop" />
-        <parameter name="browser" value="chrome" />
-        <parameter name="url" value="http://indiaserver.sypramtechnology.com:5070/" />
+        <parameter name="platform" value="desktop"/>
+        <parameter name="browser" value="chrome"/>
+        <parameter name="url" value="http://indiaserver.sypramtechnology.com:5070/"/>
         <classes>
-            <class name="Automation.Framework.pages.EZORDERPro.tests.LoginTest" />
+            <class name="Automation.Framework.pages.EZORDERPro.tests.LoginTest"/>
 
         </classes>
     </test>
@@ -17,12 +17,12 @@
             <class name="Automation.Framework.pages.EZORDERPro.tests.LoginTest" />
         </classes>
     </test>-->
-     <test name="Edge Test">
-        <parameter name="platform" value="desktop" />
-        <parameter name="browser" value="edge" />
-        <parameter name="url" value="http://indiaserver.sypramtechnology.com:5070/" />
+    <test name="Edge Test">
+        <parameter name="platform" value="desktop"/>
+        <parameter name="browser" value="edge"/>
+        <parameter name="url" value="http://indiaserver.sypramtechnology.com:5070/"/>
         <classes>
-            <class name="Automation.Framework.pages.EZORDERPro.tests.LoginTest" />
+            <class name="Automation.Framework.pages.EZORDERPro.tests.LoginTest"/>
         </classes>
     </test>
     <!--<test name="Android Test">

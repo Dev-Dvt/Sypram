@@ -11,21 +11,22 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Optional;
 import org.testng.annotations.Parameters;
 
 
 import java.net.MalformedURLException;
 
 public class BaseTest {
-   protected WebDriver driver;
+    protected WebDriver driver;
 
-   //@Parameters({"platform", "deviceName", "browser", "url"})
+    //@Parameters({"platform", "deviceName", "browser", "url"})
     //public void setUp(String platform, String deviceName, String browser, String url) throws MalformedURLException {
 
     @BeforeMethod
     @Parameters({"platform", "browser", "url"})
-    public void setUp(String platform, String browser, String url) throws MalformedURLException {
-           if (platform.equalsIgnoreCase("desktop")) {
+    public void setUp(@Optional String platform, @Optional String browser, @Optional String url) throws MalformedURLException {
+        if (platform.equalsIgnoreCase("desktop")) {
             switch (browser.toLowerCase()) {
                 case "chrome":
                     WebDriverManager.chromedriver().setup();

@@ -3,10 +3,7 @@ package Automation.Framework.pages.EZORDERPro.pages;
 import Automation.Framework.pages.BasePage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.RemoteWebElement;
 import org.openqa.selenium.support.FindBy;
-
-import java.util.SplittableRandom;
 
 public class LoginPage extends BasePage {
 
@@ -42,16 +39,18 @@ public class LoginPage extends BasePage {
 
     public void clickLogin() {
         loginButton.click();
-      }
+    }
 
     public boolean iuserButton() {
         userButton.isDisplayed();
         return true;
     }
-        public String ifailedmessage() {
+
+    public String ifailedmessage() {
         return failedMessage.getText();
 
     }
+
     public void clickfailedLoginOK() {
         failedLoginOK.click();
     }
